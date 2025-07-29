@@ -64,7 +64,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         plot.add_trace(trace);
         plot.add_trace(zeros);
         
-        plot.show_html("poly_plot.html");
+        // plot.show_html("poly_plot.html");
+        open::that("poly_plot.html")?;
     }
     else{
         println!("Degree is too high, I don't know how to solve.")
