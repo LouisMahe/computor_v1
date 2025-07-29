@@ -3,8 +3,18 @@ FROM alpine:3.20
 LABEL org.opencontainers.image.source=https://github.com/rust-lang/docker-rust
 
 RUN apk add --no-cache \
-        ca-certificates \
-        gcc
+    build-base \
+    clang \
+    llvm \
+    lld \
+    musl-dev \
+    libc-dev \
+    pkgconf \
+    ca-certificates \
+    curl \
+    wget \
+    tar \
+    openssl
 
 ENV RUSTUP_HOME=/usr/local/rustup \
     CARGO_HOME=/usr/local/cargo \
